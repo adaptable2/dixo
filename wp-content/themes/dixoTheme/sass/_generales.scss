@@ -1,0 +1,114 @@
+$verde: #E2E735;
+$verdeoscuro: #989A3A;
+$grisoscuro: #54565A;
+$grisclaro: #F7F7F7;
+$gris: #E6E6E6;
+
+
+body{
+	font-family: 'Helvetica',sans-serif;
+}
+
+ul{
+	list-style: none;
+	padding: 0;
+}
+
+.color{
+	&-verde{
+		color:$verde;
+	}
+	&-verdeoscuro{
+		color:$verdeoscuro;
+	}
+	&-grisoscuro{
+		color:$grisoscuro;
+	}
+}
+.bg{
+	&-verde{
+		background:$verde;
+	}
+	&-verdeoscuro{
+		background:$verdeoscuro;
+	}
+	&-grisoscuro{
+		background:$grisoscuro;
+	}
+}
+
+.btn-general,input[type="submit"]{
+	background: $verde;
+	color: $grisoscuro;
+	display: inline-block;
+	padding: 15px;
+	padding-right: 30px;
+	position:relative;
+	cursor: pointer;
+	&:hover{
+		color: $grisoscuro;
+	}
+	&:after{
+		content: "";
+		display: block;
+		width: 10px;
+		height: 10px;
+		top: 50%;
+		transform: translateY(-50%) rotate(45deg);
+		right: 15px;
+		border-top: solid 2px $grisoscuro;
+		border-right: solid 2px $grisoscuro;
+		position: absolute;
+	}
+}
+
+.title-lg{
+	font-size: 7.5em;
+	color: $gris;
+	font-weight: bold;
+	position: relative;
+	display: block;
+	padding: 30px 0; 
+		span{
+			position: absolute;
+			line-height: 0;
+			top: 50%;
+			width: 100%;
+			font-size: 0.3em;
+			left: 50%;
+			letter-spacing: 0.4em;
+			font-weight: 400;
+			transform: translate(-50%);
+			color: $verdeoscuro;
+		}	
+	@media only screen and (max-width: 768px){
+		font-size: 5.5em;
+	}
+	@media only screen and (max-width: 568px){
+		font-size: 2.5em;
+	}
+}
+.pd-60-top{
+	padding-top: 60px;
+	@media only screen and (max-width: 568px){
+		padding-top: 30px;
+	}
+}
+
+p{
+	font-weight: 100;
+}
+
+.principio{
+	padding: 30px 15px;
+	@media only screen and (max-width: 568px){
+		padding: 15px;
+	}
+}
+
+.l-height{
+	letter-spacing: 0.4em;
+	@media only screen and (max-width: 568px){
+		letter-spacing: inherit;
+	}
+}

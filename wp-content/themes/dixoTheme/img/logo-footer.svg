@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="78.153" height="74.381" viewBox="0 0 78.153 74.381">
+  <g id="DIXO_FOOTER" transform="translate(124.982 -250.489)">
+    <ellipse id="Elipse_21" data-name="Elipse 21" cx="3.914" cy="3.914" rx="3.914" ry="3.914" transform="translate(-119.809 250.489)" fill="#fff"/>
+    <ellipse id="Elipse_22" data-name="Elipse 22" cx="3.914" cy="3.914" rx="3.914" ry="3.914" transform="translate(-90.64 250.489)" fill="#fff"/>
+    <ellipse id="Elipse_23" data-name="Elipse 23" cx="3.914" cy="3.914" rx="3.914" ry="3.914" transform="translate(-61.801 250.489)" fill="#fff"/>
+    <ellipse id="Elipse_24" data-name="Elipse 24" cx="3.914" cy="3.914" rx="3.914" ry="3.914" transform="translate(-119.991 309.739)" fill="#fff"/>
+    <ellipse id="Elipse_25" data-name="Elipse 25" cx="3.914" cy="3.914" rx="3.914" ry="3.914" transform="translate(-90.64 309.739)" fill="#fff"/>
+    <path id="Trazado_20416" data-name="Trazado 20416" d="M-117.721,263.508h-7.261v21.741h7.261c6.731,0,10.912-4.171,10.912-10.885C-106.809,267.77-111.093,263.508-117.721,263.508Zm7.466,10.856c0,4.914-2.794,7.73-7.669,7.73h-3.7v-15.43h3.7C-113.122,266.663-110.255,269.543-110.255,274.364Z" transform="translate(0 9.734)" fill="#fff"/>
+    <path id="Trazado_20417" data-name="Trazado 20417" d="M-81.1,273.929l6.389-10.421h-3.976l-3.788,6.357c-.259.423-.506.884-.713,1.287-.227-.4-.488-.86-.733-1.28l-3.764-6.365h-3.942l6.326,10.421-6.909,11.32h3.915l4.374-7.349c.252-.423.5-.865.7-1.248.212.379.459.813.711,1.221l4.43,7.376h3.917Z" transform="translate(25.293 9.734)" fill="#fff"/>
+    <path id="Trazado_20418" data-name="Trazado 20418" d="M-81.979,280.325A10.955,10.955,0,0,0-93.038,291.41,11.087,11.087,0,0,0-81.979,302.76,11.087,11.087,0,0,0-70.921,291.41,10.955,10.955,0,0,0-81.979,280.325Zm7.613,11.085c0,4.562-3.343,8.135-7.613,8.135s-7.613-3.573-7.613-8.135a7.664,7.664,0,0,1,7.613-7.874A7.664,7.664,0,0,1-74.367,291.41Z" transform="translate(24.092 22.111)" fill="#fff"/>
+    <path id="Trazado_20419" data-name="Trazado 20419" d="M-99.936,267.235v-3.727h-6.271v3.727h1.457v14.409h-1.457v3.727h6.271v-3.727h-1.457V267.235Z" transform="translate(16.341 9.719)" fill="#fff"/>
+  </g>
+</svg>

@@ -1,0 +1,85 @@
+.option{
+	background: white url(img/Flecha_derecha-gray.svg) no-repeat 95% center / 20px;
+	color: $grisoscuro;
+	padding: 5px;
+	margin-bottom: 20px;
+}
+ul{
+	.item-option{
+		display: inline-block;
+		@media only screen and (max-width: 768px){
+			display: block;
+			width: 100%;
+		}
+		&:last-child{
+			a.nav-link{
+				&:after	{
+					display: none;
+				}
+			}
+		}
+		a.nav-link{
+			background: $grisoscuro;
+			color: white;
+			border-radius: 50%;
+			position: relative;
+			width: 90px;
+			height: 90px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			@media only screen and (max-width: 768px){
+				border-radius: 0;
+				width: 100%;
+				height: auto;
+				img{
+					max-width: 30px;
+					margin-right: 30px;
+				}
+			}
+			&:after{
+				content: "";
+				display: block;
+				position: absolute;
+				top: 50%;
+				right: -100%;
+				width: 100%;
+				background: $grisoscuro;
+				height: 3px;
+				@media only screen and (max-width: 768px){
+					display: none;
+				}
+			}
+			&.active{
+				background-color: $verde;
+				color: $grisoscuro;	
+				&:after{
+					background: $verde; 
+				}
+			}
+		}
+	}
+}
+
+.tab-content-exito{
+	padding-top: 90px;
+	@media only screen and (max-width: 768px){
+		padding-top: 20px;
+	}
+}
+
+.content-tab{
+	padding: 60px;
+	margin-left: -20%;
+	box-shadow: 0 0 11px 0px rgba(silver, 0.44);
+	z-index: 2;
+	position: relative;
+	background: white;
+	img{
+		margin: 0 auto 30px;
+		display: block;
+	}
+	@media only screen and (max-width: 768px){
+		margin-left: 0%;
+	}
+}

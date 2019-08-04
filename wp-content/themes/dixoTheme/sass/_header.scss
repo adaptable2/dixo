@@ -1,0 +1,64 @@
+.nav-page{
+	background: white;
+	position: relative;
+	z-index: 1;
+}
+.search{
+	width: 50%;
+	position: absolute;
+    top: 25px;
+    right: 50px;
+    transform: translateY(-10%);	
+	input.form-control{
+		padding-right: 50px;
+		background: $grisclaro url(img/lupa.png) no-repeat 97% center / auto;
+		border: none;
+		width: 100%;
+		border-radius: 0;
+		margin-right: 0;
+	}
+	@media only screen and (min-width: 992px){
+		position: absolute;
+		right: 0;
+	}
+}
+
+.menu-item{
+	padding: 10px 17px;
+	font-size: 12px;
+	@media only screen and (max-width: 992px){
+		padding: 20px 17px;
+	}
+	&:first-child{
+		margin-left: 50px;
+		@media only screen and (max-width: 992px){
+			margin-left: 0px;
+		}
+	}
+	a{
+		color: $grisoscuro;
+	}
+}
+
+@media only screen and (min-width: 768px){
+	.collapse{
+		position: absolute;
+		bottom: -44px;
+	}
+} 
+
+.navbar-toggler{
+	padding: 0;
+	&:focus{
+		box-shadow: none;
+		outline: none;
+	}
+}
+
+.bar-menu{
+	background: $grisoscuro;
+	display: block;
+	height: 2px;
+	margin: 4px;
+	width: 20px;
+}

@@ -1,0 +1,92 @@
+ #carousel3d .carousel-3d-slide{
+    border: none; 
+    background: $verde;
+}
+
+#carouselequipo .carousel-3d-slide {
+    border: none; 
+    background: white;
+}
+
+#carousel3d .carousel-3d-slide.current {
+    color: #fff;
+    border: none;
+    // box-shadow: 0 0 20px rgba(silver,0.8);
+}
+
+.carousel-3d-slide{
+    border: none; 
+
+}
+
+#carousel3d .carousel-3d-slide.current span {
+    font-size: 20px;
+    font-weight: 500;
+}
+.text-3d{
+    padding: 40px 20px;
+    @media only screen and (max-width: 768px){
+        padding: 10px 45px;
+    }
+}
+.title-3d{
+    font-size: 3.5em;
+}
+
+.carousel-3d-slide{
+    .img-3d,.text-3d-p{
+        display: none;
+    }
+
+}
+.carousel-3d-slide.current{
+    .img-3d{
+        display: block ;
+    }
+}
+.carousel-3d-container,.carousel-3d-slider,.carousel-3d-slide.current{
+    @media only screen and (max-width: 900px){
+        min-height: 480px !important;
+    }
+    @media only screen and (max-width: 620px){
+        min-height: 450px !important;
+    }
+    @media only screen and (max-width: 400px){
+        min-height: 550px !important;
+    }
+}
+.title-content-3d{
+    display: flex;
+    transform:translateX(-50%) rotate(90deg);
+    position: absolute;
+    top: 50%;
+    right: 0;
+    h2{
+        margin-right: 30px;
+    }
+}
+
+#carouselequipo{
+    overflow: hidden;
+    h2{
+        color: $grisoscuro;
+        font-size: 43px;
+        text-decoration: underline;
+        @media only screen and (max-width: 768px){
+            font-size: 20px;
+        }
+    }
+    .carousel-3d-container{
+        overflow: visible;
+    }
+    .carousel-3d-slide{
+        padding: 40px;
+        box-shadow: 0 0 10px silver;
+        @media only screen and (max-width: 768px){
+            padding: 30px 0px;
+            .text-3d{
+                padding: 30px 60px;
+            }
+        }
+    }
+}

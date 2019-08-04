@@ -1,0 +1,53 @@
+.banner-principal {
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: inherit;
+    height: 80vh;
+    @media only screen and (max-width: 568px){
+    	height: 50vh;
+    }
+    &:after{
+    	content: "";
+    	display: block;
+    	position: absolute;
+    	top: 90px;
+    	right: 8.333333%;
+    	height: 100px;
+    	width: 100px;
+    	background: url(img/Logo_dixo_banner.svg) no-repeat center / contain;
+    	@media only screen and (max-width: 568px){
+    		width: 60px;
+            top: 70px;
+    	}
+    }
+}
+
+.num-banner{
+	font-size: 6em;
+	line-height: 100px;
+	font-weight: bold;
+	@media only screen and (max-width: 768px){
+		font-size: 2em;
+		line-height: 1.5em;
+	}
+}
+
+.text-banner{
+	background: rgba(255,255,255,0.7);
+	padding: 25px 15px;
+    min-width: 380px;
+    @media only screen and (max-width: 568px){
+        min-width: inherit;
+        width: 100%;
+        h2{
+            font-size: 25px;
+        }
+    }
+	span{
+		font-size: 33px;
+		@media only screen and (max-width: 568px){
+			font-size: 15px;
+		}
+	}
+}

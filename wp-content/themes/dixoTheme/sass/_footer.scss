@@ -1,0 +1,55 @@
+footer{
+	background: $grisoscuro;
+	padding: 20px 0;
+	.datos-footer{
+		padding: 20px 0;
+		margin: 0;
+	li{
+		display: inline-block;
+		padding: 10px;
+		width: 49%;
+		font-size: 12px;
+		span{
+			color: white;
+			display: block;
+		}
+		&:last-child{
+			border-left: solid 2px white;
+		}
+	}
+	}
+}
+.redes-footer{
+	display: inline-flex;
+	li{
+		padding: 10px;
+	}
+}
+.upscroll{
+	padding: 30px;
+	width: 100px;
+	height: 100px;
+	margin-bottom: 30px;
+	text-align: center;
+	border-radius: 50%;
+	background: $verde;
+	display: inline-block;
+	position: relative;
+	color: $grisoscuro;
+	@media only screen and (min-width: 768px){
+		margin-bottom: 0px;
+	}
+	&:hover{
+		color: $grisoscuro;
+	}
+	&:before{
+		content: "";
+		display: block;
+		width: 20px;
+		margin-left: 50%;
+		transform: translateX(-50%) rotate(45deg);
+		height: 20px;
+		border-top: solid 5px $grisoscuro;
+		border-left: solid 5px $grisoscuro;
+	}
+}
