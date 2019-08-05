@@ -243,7 +243,7 @@
 	</section>
 	<!--Form-->
 </div>
-<div id="equipo" class="">
+<div id="equipo" class="d-none">
 	<div class="paralax-banner">
 		<section class="banner-principal d-flex justify-content-start align-items-center" style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/bannerequipo.jpg')" id="inicio">
 			<div class="col-md-5 offset-md-2">
@@ -654,7 +654,7 @@
 	</section>
 	<!--Descripción-->
 </div>
-<div id="exito" class="d-none">
+<div id="exito" class="">
 	<div class="paralax-banner">
 		<section class="banner-principal d-flex justify-content-start align-items-center" style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/hacemosbanner.jpg')" id="inicio">
 			<div class="col-md-5 offset-md-2">
