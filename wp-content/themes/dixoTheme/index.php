@@ -149,7 +149,7 @@
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" data-toggle="tab" href="#servicio2" style="background: url(<?php echo get_template_directory_uri(); ?>/img/tab2nav.jpg) no-repeat center / cover">
-							<img src="<?php echo get_template_directory_uri(); ?>/img/Informacion.svg" alt="">
+							<img src="<?php echo get_template_directory_uri(); ?>/img/centralizada.svg" alt="">
 							<p>Información centralizada</p>
 							<div class="btn-general">Más información</div>
 						</a>
@@ -163,7 +163,7 @@
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" data-toggle="tab" href="#servicio4" style="background: url(<?php echo get_template_directory_uri(); ?>/img/tab4nav.jpg) no-repeat center / cover">
-							<img src="<?php echo get_template_directory_uri(); ?>/img/Informacion.svg" alt="">
+							<img src="<?php echo get_template_directory_uri(); ?>/img/seguridad.svg" alt="">
 							<p>Control de accesos</p>
 							<div class="btn-general">Más información</div>
 						</a>
