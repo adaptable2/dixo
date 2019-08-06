@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<div class="d-none" id="home"><!--Banner-->
+<div class="" id="home"><!--Banner-->
 	<div class="paralax-banner">
 		<section class="banner-principal d-flex justify-content-start align-items-center" style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/banner.jpg')" id="inicio">
 			<div class="col-md-5 offset-md-2">
@@ -142,7 +142,7 @@
 				<ul class="nav nav-tabs">
 					<li class="nav-item">
 						<a class="nav-link" data-toggle="tab" href="#servicio1" style="background: url(<?php echo get_template_directory_uri(); ?>/img/tab1nav.jpg) no-repeat center / cover">
-							<img src="<?php echo get_template_directory_uri(); ?>/img/Informacion.svg" alt="">
+							<img src="<?php echo get_template_directory_uri(); ?>/img/electricidad.svg" alt="">
 							<p>Ahorro energetico</p>
 							<div class="btn-general">Más información</div>
 						</a>
@@ -219,7 +219,7 @@
 						<div class="form-group row">
 							<label for="staticEmail" class="col-sm-2 col-form-label">Mail:</label>
 							<div class="col-sm-10">
-								<input type="text" readonly class="" id="" value="email@example.com">
+								<input type="text" class="" id="" value="">
 							</div>
 						</div>
 						<div class="form-group row">
@@ -654,7 +654,7 @@
 	</section>
 	<!--Descripción-->
 </div>
-<div id="exito" class="">
+<div id="exito" class="d-none">
 	<div class="paralax-banner">
 		<section class="banner-principal d-flex justify-content-start align-items-center" style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/hacemosbanner.jpg')" id="inicio">
 			<div class="col-md-5 offset-md-2">
@@ -843,3 +843,4 @@
 		</section>
 	</div>
 <?php get_footer(); ?>
+
