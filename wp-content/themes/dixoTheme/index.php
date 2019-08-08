@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<div class="" id="home"><!--Banner-->
+<div class="d-none" id="home"><!--Banner-->
 	<div class="paralax-banner">
 		<section class="banner-principal d-flex justify-content-start align-items-center" style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/banner.jpg')" id="inicio">
 			<div class="col-md-5 offset-md-2">
@@ -32,7 +32,7 @@
 			</div>
 		</div>
 		<div id="carousel3d">
-			<carousel-3d :perspective="0" :width="992" :height="450" :space="500" :display="3" :controls-visible="true" :controls-prev-html="'❬'" :controls-next-html="'❭'" :controls-width="30" :controls-height="60" :clickable="true" :autoplay="false">
+			<carousel-3d :perspective="0" :width="992" :height="450" :space="300" :display="3" :controls-visible="true" :controls-prev-html="'❬'" :controls-next-html="'❭'" :controls-width="30" :controls-height="60" :clickable="true" :autoplay="false">
 				<slide :index="0">
 					<div class="d-flex">
 						<div class="col-md-7 px-0 d-none d-md-flex">
@@ -172,22 +172,22 @@
 			</div>
 			<div class="tab-content col-lg-6 order-lg-0 d-flex">
 				<div id="servicio1" class="container-fluid tab-pane active justify-content-center align-items-center" style="background: url(<?php echo get_template_directory_uri(); ?>/img/tab1.png) no-repeat center center/ cover;">
-					<img src="<?php echo get_template_directory_uri(); ?>/img/electricidadgray.svg" alt="">
+					<img src="<?php echo get_template_directory_uri(); ?>/img/electricidadoscuro.svg" alt="">
 					<h2>Ahorro energetico</h2>
 					<p>Información centralizada</p>
 				</div>
 				<div id="servicio2" class="container-fluid tab-pane fade justify-content-center align-items-center" style="background: url(<?php echo get_template_directory_uri(); ?>/img/tab2.jpg) no-repeat center center/ cover;">
-					<img src="<?php echo get_template_directory_uri(); ?>/img/electricidadgray.svg" alt="">
+					<img src="<?php echo get_template_directory_uri(); ?>/img/centralizadaoscuro.svg" alt="">
 					<h2>Información centralizada</h2>
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates incidunt vel quis molestiae tempora eius a reiciendis officiis, eum, dolore totam, sit laboriosam! Sapiente sed consequatur deleniti explicabo velit aperiam!</p>
 				</div>
 				<div id="servicio3" class="container-fluid tab-pane fade justify-content-center align-items-center" style="background: url(<?php echo get_template_directory_uri(); ?>/img/tab3.jpg) no-repeat center center/ cover;">
-					<img src="<?php echo get_template_directory_uri(); ?>/img/electricidadgray.svg" alt="">
+					<img src="<?php echo get_template_directory_uri(); ?>/img/Informacionoscuro.svg" alt="">
 					<h2>Información en tiempo real</h2>
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque minima, natus aliquid id incidunt porro reprehenderit officiis impedit consequatur earum sequi aut iusto ex velit autem, laudantium eos recusandae, provident.</p>
 				</div>
 				<div id="servicio4" class="container-fluid tab-pane fade justify-content-center align-items-center" style="background: url(<?php echo get_template_directory_uri(); ?>/img/tab4.jpg) no-repeat center center/ cover;">
-					<img src="<?php echo get_template_directory_uri(); ?>/img/electricidadgray.svg" alt="">
+					<img src="<?php echo get_template_directory_uri(); ?>/img/seguridadoscuro.svg" alt="">
 					<h2>Control de accesos</h2>
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum animi, dolores hic ea qui quis aut totam! Aut, veritatis ipsam harum, et mollitia ea maiores accusamus minima nostrum quia molestias.</p>
 				</div>
@@ -242,149 +242,6 @@
 		</div>
 	</section>
 	<!--Form-->
-</div>
-<div id="equipo" class="d-none">
-	<div class="paralax-banner">
-		<section class="banner-principal d-flex justify-content-start align-items-center" style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/bannerequipo.jpg')" id="inicio">
-			<div class="col-md-5 offset-md-2">
-				<div class="text-banner d-inline-block">
-					<div class="d-flex">
-						<div class="col-2 col-md-3 px-0 color-verdeoscuro text-right">
-							<h2 class="num-banner">50</h2>
-						</div>
-						<div class="col-10 col-md-9 pr-0">
-							<h2 class="font-weight-light color-verde">
-								PROFECIONELES
-								<span class="font-weight-bold d-block color-grisoscuro">LOREM IPSUM</span>
-							</h2>
-							<a href="#" class="btn-general">Más información</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-	</div>
-	<section class="container">
-		<div class="row">
-			<div class="col-12">
-				<h2 class="title-lg text-center">
-					TRABAJO
-					<span>EQUIPO DE</span>
-				</h2>
-			</div>
-		</div>
-	</section>
-	<section class="container">
-		<div id="carouselequipo">
-			<carousel-3d :perspective="0" :width="768" :height="400" :space="300" :display="3" :controls-visible="true" :controls-prev-html="'❬'" :controls-next-html="'❭'" :controls-width="30" :controls-height="60" :clickable="true" :autoplay="false">
-				<slide :index="0" class="col-12">
-					<div class="row">
-						<div class="col-4 col-md-3 align-items-center ">
-							<img src="<?php echo get_template_directory_uri(); ?>/img/equipo.png" alt="" class="d-inline-block">
-						</div>
-						<div class="col-8 col-md-9 d-flex align-items-center">
-							<h2 class="title-3d">Ing. Jaime Serna</h2>
-						</div>
-						<div class="col-12 color-grisoscuro text-3d">
-							<p>La telemetría era la concepción inicial. Al principio solo existía la idea de crear una compañía que solucionara las necesidades de este tipo, obteniendo los datos que se pueden dar de un lugar a otro de una manera inalámbrica. Así fue como empezamos a trabajar en el desarrollo de todo lo que se podía medir a distancia.</p>
-						</div>
-					</div>
-				</slide>
-				<slide :index="1" class="col-12">
-					<div class="row">
-						<div class="col-4 col-md-3 align-items-center ">
-							<img src="<?php echo get_template_directory_uri(); ?>/img/equipo.png" alt="" class="d-inline-block">
-						</div>
-						<div class="col-8 col-md-9 d-flex align-items-center">
-							<h2 class="title-3d ">Ing. Jaime Serna</h2>
-						</div>
-						<div class="col-12 color-grisoscuro text-3d">
-							<p>La telemetría era la concepción inicial. Al principio solo existía la idea de crear una compañía que solucionara las necesidades de este tipo, obteniendo los datos que se pueden dar de un lugar a otro de una manera inalámbrica. Así fue como empezamos a trabajar en el desarrollo de todo lo que se podía medir a distancia.</p>
-						</div>
-					</div>
-				</slide>
-				<slide :index="2" class="col-12">
-					<div class="row">
-						<div class="col-4 col-md-3 align-items-center ">
-							<img src="<?php echo get_template_directory_uri(); ?>/img/equipo.png" alt="" class="d-inline-block">
-						</div>
-						<div class="col-8 col-md-9 d-flex align-items-center">
-							<h2 class="title-3d ">Ing. Jaime Serna</h2>
-						</div>
-						<div class="col-12 color-grisoscuro text-3d">
-							<p>La telemetría era la concepción inicial. Al principio solo existía la idea de crear una compañía que solucionara las necesidades de este tipo, obteniendo los datos que se pueden dar de un lugar a otro de una manera inalámbrica. Así fue como empezamos a trabajar en el desarrollo de todo lo que se podía medir a distancia.</p>
-						</div>
-					</div>
-				</slide>
-				<slide :index="3" class="col-12">
-					<div class="row">
-						<div class="col-4 col-md-3 align-items-center ">
-							<img src="<?php echo get_template_directory_uri(); ?>/img/equipo.png" alt="" class="d-inline-block">
-						</div>
-						<div class="col-8 col-md-9 d-flex align-items-center">
-							<h2 class="title-3d ">Ing. Jaime Serna</h2>
-						</div>
-						<div class="col-12 color-grisoscuro text-3d">
-							<p>La telemetría era la concepción inicial. Al principio solo existía la idea de crear una compañía que solucionara las necesidades de este tipo, obteniendo los datos que se pueden dar de un lugar a otro de una manera inalámbrica. Así fue como empezamos a trabajar en el desarrollo de todo lo que se podía medir a distancia.</p>
-						</div>
-					</div>
-				</slide>
-				<slide :index="4" class="col-12">
-					<div class="row">
-						<div class="col-4 col-md-3 align-items-center ">
-							<img src="<?php echo get_template_directory_uri(); ?>/img/equipo.png" alt="" class="d-inline-block">
-						</div>
-						<div class="col-8 col-md-9 d-flex align-items-center">
-							<h2 class="title-3d ">Ing. Jaime Serna</h2>
-						</div>
-						<div class="col-12 color-grisoscuro text-3d">
-							<p>La telemetría era la concepción inicial. Al principio solo existía la idea de crear una compañía que solucionara las necesidades de este tipo, obteniendo los datos que se pueden dar de un lugar a otro de una manera inalámbrica. Así fue como empezamos a trabajar en el desarrollo de todo lo que se podía medir a distancia.</p>
-						</div>
-					</div>
-				</slide>
-				<slide :index="5" class="col-12">
-					<div class="row">
-						<div class="col-4 col-md-3 align-items-center ">
-							<img src="<?php echo get_template_directory_uri(); ?>/img/equipo.png" alt="" class="d-inline-block">
-						</div>
-						<div class="col-8 col-md-9 d-flex align-items-center">
-							<h2 class="title-3d ">Ing. Jaime Serna</h2>
-						</div>
-						<div class="col-12 color-grisoscuro text-3d">
-							<p>La telemetría era la concepción inicial. Al principio solo existía la idea de crear una compañía que solucionara las necesidades de este tipo, obteniendo los datos que se pueden dar de un lugar a otro de una manera inalámbrica. Así fue como empezamos a trabajar en el desarrollo de todo lo que se podía medir a distancia.</p>
-						</div>
-					</div>
-				</slide>
-				<slide :index="6" class="col-12">
-					<div class="row">
-						<div class="col-4 col-md-3 align-items-center ">
-							<img src="<?php echo get_template_directory_uri(); ?>/img/equipo.png" alt="" class="d-inline-block">
-						</div>
-						<div class="col-8 col-md-9 d-flex align-items-center">
-							<h2 class="title-3d ">Ing. Jaime Serna</h2>
-						</div>
-						<div class="col-12 color-grisoscuro text-3d">
-							<p>La telemetría era la concepción inicial. Al principio solo existía la idea de crear una compañía que solucionara las necesidades de este tipo, obteniendo los datos que se pueden dar de un lugar a otro de una manera inalámbrica. Así fue como empezamos a trabajar en el desarrollo de todo lo que se podía medir a distancia.</p>
-						</div>
-					</div>
-				</slide>
-
-			</carousel-3d>
-		</div>
-	</section>
-	<!--Descripción-->
-	<section class="container pd-60-top">
-		<div class="row">
-			<div class="col-md-6 d-flex justify-content-center align-items-end"> <img src="<?php echo get_template_directory_uri(); ?>/img/salidaequipo.jpg" alt="" class="img-fluid description-img"></div>
-			<div class="col-md-4 d-flex justify-content-center flex-column">
-				<div class="description-content color-grisoscuro">
-					<p>En medio del cambio que supone rediseñar una marca, nos encontramos con querer transmitir de una manera mucho más simple quiénes somos, por esto pasamos de ser Infraestructura Digital a ser DIXO. Ahora son 4 letras que nos definen de una manera concreta como compañía inteligente, tecnológica, conectada e innovadora</p>
-					<a href="#" class="btn-general">Más información</a>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!--Descripción-->
 </div>
 <div id="principios" class="d-none">
 	<div class="paralax-banner">
@@ -654,7 +511,7 @@
 	</section>
 	<!--Descripción-->
 </div>
-<div id="exito" class="d-none">
+<div id="exito" class="">
 	<div class="paralax-banner">
 		<section class="banner-principal d-flex justify-content-start align-items-center" style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/hacemosbanner.jpg')" id="inicio">
 			<div class="col-md-5 offset-md-2">
