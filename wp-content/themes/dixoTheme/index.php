@@ -1,25 +1,52 @@
 <?php get_header(); ?>
 <!--Banner-->
-<div class="paralax-banner">
-	<section class="banner-principal d-flex justify-content-start align-items-center" style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/banner.jpg')" id="inicio">
-		<div class="col-md-5 offset-md-2">
-			<div class="text-banner d-inline-block">
-				<div class="d-flex">
-					<div class="col-2 col-md-3 px-0 color-verdeoscuro text-right">
-						<h2 class="num-banner">8</h2>
-					</div>
-					<div class="col-10 col-md-9 pr-0">
-						<h2 class="font-weight-light color-verde">
-							AÑOS
-							<span class="font-weight-bold d-block color-grisoscuro">LOREM IPSUM</span>
-						</h2>
-						<a href="#" class="btn-general">Más información</a>
+<?php 
+	$argsBanner = array(
+	    'post_type' => 'banner', // Nombre del post type
+	    'order' => 'ASC',
+	    'seccin' => 'home' // Taxonomia nombre tax => item
+	);
+	$banners = new WP_Query($argsBanner);
+	if($banners):
+?>
+
+
+	<div class="paralax-banner">
+		<?php 
+			foreach ($banners->posts as $banner):
+				$banner_img = wp_get_attachment_url( get_post_thumbnail_id($banner->ID, 'full') );
+				$banner_desc = $banner->post_content;
+				$banner_custom = get_post_meta($banner->ID);
+				$banner_numero = $banner_custom['numero'][0];
+				$banner_subtitle = $banner_custom['subtitulo'][0];
+
+
+		?>		
+		<section class="banner-principal d-flex justify-content-start align-items-center" style="background-image: url('<?php echo $banner_img;?>')" id="inicio">
+			<div class="col-md-5 offset-md-2">
+				<div class="text-banner d-inline-block">
+					<div class="d-flex">
+						<div class="col-2 col-md-3 px-0 color-verdeoscuro text-right">
+							<h2 class="num-banner"><?php echo $banner_numero;?></h2>
+						</div>
+						<div class="col-10 col-md-9 pr-0">
+							<h2 class="font-weight-light color-verde">
+								<?php echo $banner_desc;?>
+								<span class="font-weight-bold d-block color-grisoscuro"><?php echo $banner_subtitle;?></span>
+							</h2>
+							<!-- <a href="#" class="btn-general">Más información</a> -->
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-	</section>
-</div>
+		</section>
+	<?php 
+		endforeach;
+	?>
+	</div>
+<?php 
+	endif;
+?>
 <!--Banner-->
 <!--historia-->
 <section class="container-fluid">
@@ -33,91 +60,39 @@
 	</div>
 	<div id="carousel3d">
 		<carousel-3d :perspective="0" :width="992" :height="450" :space="300" :display="3" :controls-visible="true" :controls-prev-html="'❬'" :controls-next-html="'❭'" :controls-width="30" :controls-height="60" :clickable="true" :autoplay="false">
-			<slide :index="0">
+			<?php 
+		    // Argumentos para una busqueda de post type
+		    $i = 0;
+			$args = array(
+			    'post_type' => 'historia', // Nombre del post type
+			    'order' => 'ASC'
+			);
+			$historias = new WP_Query($args);
+				if ($historias->posts):
+		      // Foreach para recorrer el resultado de la busqueda
+				foreach ($historias->posts as $historia):
+					$historia_name = $historia->post_title;
+					$historia_desc = $historia->post_content;
+					$historia_dh = $historia->dh;
+		          	$historia_img = wp_get_attachment_url( get_post_thumbnail_id($historia->ID, 'full') ); // Url de la imagen en tamaño Full
+	        ?>
+			<slide :index="<?php echo $i?>">
 				<div class="d-flex">
 					<div class="col-md-7 px-0 d-none d-md-flex">
-						<img src="<?php echo get_template_directory_uri(); ?>/img/carousel.jpg" alt="" class="img-fluid">
+						<img src="<?php echo $historia_img; ?>" alt="" class="img-fluid">
 					</div>
 					<div class="col-md-5 bg-verde color-grisoscuro text-3d">
-						<h2 class="title-3d font-weight-bold">2010</h2>
-						<p class="sub-title font-weight-bold">Nace el deseo por construir una compañía enfocada en la telemetría</p>
-						<p>La telemetría era la concepción inicial. Al principio solo existía la idea de crear una compañía que solucionara las necesidades de este tipo, obteniendo los datos que se pueden dar de un lugar a otro de una manera inalámbrica. Así fue como empezamos a trabajar en el desarrollo de todo lo que se podía medir a distancia.</p>
+						<h2 class="title-3d font-weight-bold"><?php echo $historia_name;?></h2>
+						<p class="sub-title font-weight-bold"><?php echo $historia_desc;?></p>
+						<p><?php echo $historia_dh;?></p>
 					</div>
 				</div>
 			</slide>
-			<slide :index="1">
-				<div class="d-flex">
-					<div class="col-md-7 px-0 d-none d-md-flex">
-						<img src="<?php echo get_template_directory_uri(); ?>/img/carousel.jpg" alt="" class="img-fluid">
-					</div>
-					<div class="col-md-5 bg-verde color-grisoscuro text-3d">
-						<h2 class="title-3d font-weight-bold">2011</h2>
-						<p class="sub-title font-weight-bold">Nace el deseo por construir una compañía enfocada en la telemetría</p>
-						<p>La telemetría era la concepción inicial. Al principio solo existía la idea de crear una compañía que solucionara las necesidades de este tipo, obteniendo los datos que se pueden dar de un lugar a otro de una manera inalámbrica. Así fue como empezamos a trabajar en el desarrollo de todo lo que se podía medir a distancia.</p>
-					</div>
-				</div>
-			</slide>
-			<slide :index="2">
-				<div class="d-flex">
-					<div class="col-md-7 px-0 d-none d-md-flex">
-						<img src="<?php echo get_template_directory_uri(); ?>/img/carousel.jpg" alt="" class="img-fluid">
-					</div>
-					<div class="col-md-5 bg-verde color-grisoscuro text-3d">
-						<h2 class="title-3d font-weight-bold">2012</h2>
-						<p class="sub-title font-weight-bold">Nace el deseo por construir una compañía enfocada en la telemetría</p>
-						<p>La telemetría era la concepción inicial. Al principio solo existía la idea de crear una compañía que solucionara las necesidades de este tipo, obteniendo los datos que se pueden dar de un lugar a otro de una manera inalámbrica. Así fue como empezamos a trabajar en el desarrollo de todo lo que se podía medir a distancia.</p>
-					</div>
-				</div>
-			</slide>
-			<slide :index="3">
-				<div class="d-flex">
-					<div class="col-md-7 px-0 d-none d-md-flex">
-						<img src="<?php echo get_template_directory_uri(); ?>/img/carousel.jpg" alt="" class="img-fluid">
-					</div>
-					<div class="col-md-5 bg-verde color-grisoscuro text-3d">
-						<h2 class="title-3d font-weight-bold">2013</h2>
-						<p class="sub-title font-weight-bold">Nace el deseo por construir una compañía enfocada en la telemetría</p>
-						<p>La telemetría era la concepción inicial. Al principio solo existía la idea de crear una compañía que solucionara las necesidades de este tipo, obteniendo los datos que se pueden dar de un lugar a otro de una manera inalámbrica. Así fue como empezamos a trabajar en el desarrollo de todo lo que se podía medir a distancia.</p>
-					</div>
-				</div>
-			</slide>
-			<slide :index="4">
-				<div class="d-flex">
-					<div class="col-md-7 px-0 d-none d-md-flex">
-						<img src="<?php echo get_template_directory_uri(); ?>/img/carousel.jpg" alt="" class="img-fluid">
-					</div>
-					<div class="col-md-5 bg-verde color-grisoscuro text-3d">
-						<h2 class="title-3d font-weight-bold">2014</h2>
-						<p class="sub-title font-weight-bold">Nace el deseo por construir una compañía enfocada en la telemetría</p>
-						<p>La telemetría era la concepción inicial. Al principio solo existía la idea de crear una compañía que solucionara las necesidades de este tipo, obteniendo los datos que se pueden dar de un lugar a otro de una manera inalámbrica. Así fue como empezamos a trabajar en el desarrollo de todo lo que se podía medir a distancia.</p>
-					</div>
-				</div>
-			</slide>
-			<slide :index="5">
-				<div class="d-flex">
-					<div class="col-md-7 px-0 d-none d-md-flex">
-						<img src="<?php echo get_template_directory_uri(); ?>/img/carousel.jpg" alt="" class="img-fluid">
-					</div>
-					<div class="col-md-5 bg-verde color-grisoscuro text-3d">
-						<h2 class="title-3d font-weight-bold">2015</h2>
-						<p class="sub-title font-weight-bold">Nace el deseo por construir una compañía enfocada en la telemetría</p>
-						<p>La telemetría era la concepción inicial. Al principio solo existía la idea de crear una compañía que solucionara las necesidades de este tipo, obteniendo los datos que se pueden dar de un lugar a otro de una manera inalámbrica. Así fue como empezamos a trabajar en el desarrollo de todo lo que se podía medir a distancia.</p>
-					</div>
-				</div>
-			</slide>
-			<slide :index="6">
-				<div class="d-flex">
-					<div class="col-md-7 px-0 d-none d-md-flex">
-						<img src="<?php echo get_template_directory_uri(); ?>/img/carousel.jpg" alt="" class="img-fluid">
-					</div>
-					<div class="col-md-5 bg-verde color-grisoscuro text-3d">
-						<h2 class="title-3d font-weight-bold">2016</h2>
-						<p class="sub-title font-weight-bold">Nace el deseo por construir una compañía enfocada en la telemetría</p>
-						<p>La telemetría era la concepción inicial. Al principio solo existía la idea de crear una compañía que solucionara las necesidades de este tipo, obteniendo los datos que se pueden dar de un lugar a otro de una manera inalámbrica. Así fue como empezamos a trabajar en el desarrollo de todo lo que se podía medir a distancia.</p>
-					</div>
-				</div>
-			</slide>
-
+			<?php
+		    	$i++;
+		    	endforeach;
+		  		endif; 
+		  	?>
 		</carousel-3d>
 	</div>
 </section>
