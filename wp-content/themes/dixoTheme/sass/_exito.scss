@@ -28,6 +28,9 @@ ul{
 			display: flex;
 			align-items: center;
 			justify-content: center;
+			img{
+				filter: brightness(0) invert(1);
+			}
 			@media only screen and (max-width: 768px){
 				border-radius: 0;
 				width: 100%;
@@ -52,7 +55,10 @@ ul{
 			}
 			&.active{
 				background-color: $verde;
-				color: $grisoscuro;	
+				color: $grisoscuro;
+				img{
+					filter: inherit;
+				}	
 				&:after{
 					background: $verde; 
 				}

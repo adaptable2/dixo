@@ -14,7 +14,7 @@
 			$banner_img = wp_get_attachment_url( get_post_thumbnail_id($banner->ID, 'full') );
 			$banner_desc = $banner->post_content;
 			$banner_custom = get_post_meta($banner->ID);
-			$banner_numero = $banner_custom['numero'][0]; // sitio
+			$banner_numero = $banner_custom['numero'][0]; 
 			$banner_subtitle = $banner_custom['subtitulo'][0];
 
 

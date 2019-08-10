@@ -42,6 +42,9 @@ $argsBanner = array(
 endif;
 ?>
 
+
+
+
 <section class="container">
 	<div class="row">
 		<div class="col-12">
@@ -55,157 +58,74 @@ endif;
 				<div class="option d-block d-md-none">
 				</div>
 				<ul class="nav nav-pills options-mobile d-none d-md-flex w-100 justify-content-between">
+					<?php 
+					$i = 0;
+				    // Argumentos para una busqueda de post type
+					$args = array(
+					    'post_type' => 'proyectos', // Nombre del post type
+					    'order' => 'ASC'
+					);
+					$proyectos = new WP_Query($args);
+						if ($proyectos->posts):
+				      // Foreach para recorrer el resultado de la busqueda
+						foreach ($proyectos->posts as $proyecto):
+							$proyecto_name = $proyecto->post_title;
+							$proyecto_slug = $proyecto->post_name;
+							$proyecto_icon = pods_field('proyectos', $proyecto->ID, 'icon');
+			        ?>
 					<li class="nav-item item-option">
-						<a class="nav-link active" data-toggle="pill" href="#menu0">
-							<img src="<?php echo get_template_directory_uri(); ?>/img/velez.png" alt="" class="img-fluid">
-							<span class="d-md-none">Velez</span>
+						<a class="nav-link <?php echo ($i == 0)?'active':'';?>" data-toggle="pill" href="#<?php echo $proyecto_slug;?>">
+							<img src="<?php echo $proyecto_icon['guid'];?>" alt="" class="img-fluid">
+							<span class="d-md-none"><?php echo $proyecto_name;?></span>
 						</a>
 					</li>
-					<li class="nav-item item-option">
-						<a class="nav-link" data-toggle="pill" href="#menu1">
-							<img src="<?php echo get_template_directory_uri(); ?>/img/u.png" alt="" class="img-fluid">
-							<span class="d-md-none">Universidad</span>
-						</a>
-					</li>
-					<li class="nav-item item-option">
-						<a class="nav-link" data-toggle="pill" href="#menu2">
-							<img src="<?php echo get_template_directory_uri(); ?>/img/directa.png" alt="" class="img-fluid">
-							<span class="d-md-none">Directa</span>
-						</a>
-					</li>
-					<li class="nav-item item-option">
-						<a class="nav-link" data-toggle="pill" href="#menu3">
-							<img src="<?php echo get_template_directory_uri(); ?>/img/eafit.png" alt="" class="img-fluid">
-							<span class="d-md-none">Eafir</span>
-						</a>
-					</li>
-					<li class="nav-item item-option">
-						<a class="nav-link" data-toggle="pill" href="#menu4">
-							<img src="<?php echo get_template_directory_uri(); ?>/img/viva.png" alt="" class="img-fluid">
-							<span class="d-md-none">Viva</span>
-						</a>
-					</li>
-					<li class="nav-item item-option">
-						<a class="nav-link" data-toggle="pill" href="#menu5">
-							<img src="<?php echo get_template_directory_uri(); ?>/img/leonisa.png" alt="" class="img-fluid">
-							<span class="d-md-none">Leonisa</span>
-						</a>
-					</li>
-					<li class="nav-item item-option">
-						<a class="nav-link" data-toggle="pill" href="#menu6">
-							<img src="<?php echo get_template_directory_uri(); ?>/img/mane.png" alt="" class="img-fluid">
-							<span class="d-md-none">Mane</span>
-						</a>
-					</li>
+					<?php
+						$i++;
+						endforeach;
+						endif;
+					?>
 				</ul>
 			</div>
 
 			<!-- Tab panes -->
 			<div class="tab-content tab-content-exito">
-				<div class="tab-pane container active" id="menu0">
+				<?php
+			    // Argumentos para una busqueda de post type
+				$j = 0;
+				$args = array(
+				    'post_type' => 'proyectos', // Nombre del post type
+				    'order' => 'ASC'
+				);
+				$proyectos = new WP_Query($args);
+					if ($proyectos->posts):
+			      // Foreach para recorrer el resultado de la busqueda
+					foreach ($proyectos->posts as $proyecto):
+						$proyecto_desc = $proyecto->post_content;
+						$proyecto_name = $proyecto->post_title;
+						$proyecto_slug = $proyecto->post_name;
+						$proyecto_img = wp_get_attachment_url( get_post_thumbnail_id($proyecto->ID, 'full') );
+						$proyecto_icon = pods_field('proyectos', $proyecto->ID, 'icon');
+		        ?>
+				<div class="tab-pane container <?php echo ($j == 0)?'active':'';?>" id="<?php echo $proyecto_slug;?>">
 					<div class="row">
 						<div class="col-md-7 d-none d-md-block">
-							<img src="<?php echo get_template_directory_uri(); ?>/img/img-tab.png" alt="" class="img-fluid">
+							<img src="<?php echo $proyecto_img;?>" alt="" class="img-fluid">
 						</div>
 						<div class="col-md-5 d-flex align-items-center">
 							<div class="content-tab color-grisoscuro">
-								<img src="<?php echo get_template_directory_uri(); ?>/img/icon-content.png" alt="" class="img-fluid">
-								<h2>Cueros Vélez</h2>
-								<p>Automatización de sistemas de seguridad electrónica en plantas</p>
+								<img src="<?php echo $proyecto_icon['guid'];?>" alt="" class="img-fluid">
+								<h2><?php echo $proyecto_name;?></h2>
+								<p><?php echo $proyecto_desc;?></p>
 								<a href="" class="btn-general">Contactar</a>
 							</div>
 						</div>
-					</div></div>
-					<div class="tab-pane container fade" id="menu1">
-						<div class="row">
-							<div class="col-md-7 d-none d-md-block">
-								<img src="<?php echo get_template_directory_uri(); ?>/img/img-tab.png" alt="" class="img-fluid">
-							</div>
-							<div class="col-md-5 d-flex align-items-center">
-								<div class="content-tab color-grisoscuro">
-									<img src="<?php echo get_template_directory_uri(); ?>/img/icon-content.png" alt="" class="img-fluid">
-									<h2>Universidad</h2>
-									<p>Automatización de sistemas de seguridad electrónica en plantas</p>
-									<a href="" class="btn-general">Contactar</a>
-								</div>
-							</div>
-						</div>
 					</div>
-					<div class="tab-pane container fade" id="menu2">
-						<div class="row">
-							<div class="col-md-7 d-none d-md-block">
-								<img src="<?php echo get_template_directory_uri(); ?>/img/img-tab.png" alt="" class="img-fluid">
-							</div>
-							<div class="col-md-5 d-flex align-items-center">
-								<div class="content-tab color-grisoscuro">
-									<img src="<?php echo get_template_directory_uri(); ?>/img/icon-content.png" alt="" class="img-fluid">
-									<h2>Directa</h2>
-									<p>Automatización de sistemas de seguridad electrónica en plantas</p>
-									<a href="" class="btn-general">Contactar</a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="tab-pane container fade" id="menu3">
-						<div class="row">
-							<div class="col-md-7 d-none d-md-block">
-								<img src="<?php echo get_template_directory_uri(); ?>/img/img-tab.png" alt="" class="img-fluid">
-							</div>
-							<div class="col-md-5 d-flex align-items-center">
-								<div class="content-tab color-grisoscuro">
-									<img src="<?php echo get_template_directory_uri(); ?>/img/icon-content.png" alt="" class="img-fluid">
-									<h2>Eafit</h2>
-									<p>Automatización de sistemas de seguridad electrónica en plantas</p>
-									<a href="" class="btn-general">Contactar</a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="tab-pane container fade" id="menu4">
-						<div class="row">
-							<div class="col-md-7 d-none d-md-block">
-								<img src="<?php echo get_template_directory_uri(); ?>/img/img-tab.png" alt="" class="img-fluid">
-							</div>
-							<div class="col-md-5 d-flex align-items-center">
-								<div class="content-tab color-grisoscuro">
-									<img src="<?php echo get_template_directory_uri(); ?>/img/icon-content.png" alt="" class="img-fluid">
-									<h2>Viva</h2>
-									<p>Automatización de sistemas de seguridad electrónica en plantas</p>
-									<a href="" class="btn-general">Contactar</a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="tab-pane container fade" id="menu5">
-						<div class="row">
-							<div class="col-md-7 d-none d-md-block">
-								<img src="<?php echo get_template_directory_uri(); ?>/img/img-tab.png" alt="" class="img-fluid">
-							</div>
-							<div class="col-md-5 d-flex align-items-center">
-								<div class="content-tab color-grisoscuro">
-									<img src="<?php echo get_template_directory_uri(); ?>/img/icon-content.png" alt="" class="img-fluid">
-									<h2>Leonisa</h2>
-									<p>Automatización de sistemas de seguridad electrónica en plantas</p>
-									<a href="" class="btn-general">Contactar</a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="tab-pane container fade" id="menu6">
-						<div class="row">
-							<div class="col-md-7 d-none d-md-block">
-								<img src="<?php echo get_template_directory_uri(); ?>/img/img-tab.png" alt="" class="img-fluid">
-							</div>
-							<div class="col-md-5 d-flex align-items-center">
-								<div class="content-tab color-grisoscuro">
-									<img src="<?php echo get_template_directory_uri(); ?>/img/icon-content.png" alt="" class="img-fluid">
-									<h2>Mane</h2>
-									<p>Automatización de sistemas de seguridad electrónica en plantas</p>
-									<a href="" class="btn-general">Contactar</a>
-								</div>
-							</div>
-						</div>
-					</div>
+				</div>
+				<?php
+					$j++;
+					endforeach;
+					endif;
+				?>
 				</div>
 			</div>
 		</div>

@@ -134,57 +134,62 @@ $destacados = new WP_Query($args);
 	<div class="row">
 		<div class="col-lg-6 order-lg-1 px-0">
 			<ul class="nav nav-tabs">
+				<?php 
+				// Argumentos para una busqueda de post type
+				$args = array(
+				    'post_type' => 'servicio', // Nombre del post type
+				    'order' => 'ASC',
+				);
+				$servicios = new WP_Query($args);
+					if ($servicios->posts):
+				  // Foreach para recorrer el resultado de la busqueda
+					foreach ($servicios->posts as $servicio):
+						$servicio_name = $servicio->post_title;
+						$servicio_slug = $servicio->post_name;
+						$servicio_icontab = pods_field('servicio', $servicio->ID, 'iconotab');
+				      	$servicio_img = wp_get_attachment_url( get_post_thumbnail_id($servicio->ID, 'full') ); // Url de la imagen en tamaño Full
+				?>
 				<li class="nav-item">
-					<a class="nav-link" data-toggle="tab" href="#servicio1" style="background: url(<?php echo get_template_directory_uri(); ?>/img/tab1nav.jpg) no-repeat center / cover">
-						<img src="<?php echo get_template_directory_uri(); ?>/img/electricidad.svg" alt="">
-						<p>Ahorro energetico</p>
+					<a class="nav-link" data-toggle="tab" href="#<?php echo $servicio_slug;?>" style="background: url(<?php echo $servicio_img; ?>) no-repeat center / cover">
+						<img src="<?php echo $servicio_icontab['guid']; ?>" alt="">
+						<p><?php echo $servicio_name?></p>
 						<div class="btn-general">Más información</div>
 					</a>
 				</li>
-				<li class="nav-item">
-					<a class="nav-link" data-toggle="tab" href="#servicio2" style="background: url(<?php echo get_template_directory_uri(); ?>/img/tab2nav.jpg) no-repeat center / cover">
-						<img src="<?php echo get_template_directory_uri(); ?>/img/centralizada.svg" alt="">
-						<p>Información centralizada</p>
-						<div class="btn-general">Más información</div>
-					</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" data-toggle="tab" href="#servicio3" style="background: url(<?php echo get_template_directory_uri(); ?>/img/tab3nav.jpg) no-repeat center / cover">
-						<img src="<?php echo get_template_directory_uri(); ?>/img/Informacion.svg" alt="">
-						<p>Información en tiempo real</p>
-						<div class="btn-general">Más información</div>
-					</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" data-toggle="tab" href="#servicio4" style="background: url(<?php echo get_template_directory_uri(); ?>/img/tab4nav.jpg) no-repeat center / cover">
-						<img src="<?php echo get_template_directory_uri(); ?>/img/seguridad.svg" alt="">
-						<p>Control de accesos</p>
-						<div class="btn-general">Más información</div>
-					</a>
-				</li>
+				<?php
+					endforeach;
+					endif;
+				?>
 			</ul>			
 		</div>
 		<div class="tab-content col-lg-6 order-lg-0 d-flex">
-			<div id="servicio1" class="container-fluid tab-pane active justify-content-center align-items-center" style="background: url(<?php echo get_template_directory_uri(); ?>/img/tab1.png) no-repeat center center/ cover;">
-				<img src="<?php echo get_template_directory_uri(); ?>/img/electricidadoscuro.svg" alt="">
-				<h2>Ahorro energetico</h2>
-				<p>Información centralizada</p>
-			</div>
-			<div id="servicio2" class="container-fluid tab-pane fade justify-content-center align-items-center" style="background: url(<?php echo get_template_directory_uri(); ?>/img/tab2.jpg) no-repeat center center/ cover;">
-				<img src="<?php echo get_template_directory_uri(); ?>/img/centralizadaoscuro.svg" alt="">
-				<h2>Información centralizada</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates incidunt vel quis molestiae tempora eius a reiciendis officiis, eum, dolore totam, sit laboriosam! Sapiente sed consequatur deleniti explicabo velit aperiam!</p>
-			</div>
-			<div id="servicio3" class="container-fluid tab-pane fade justify-content-center align-items-center" style="background: url(<?php echo get_template_directory_uri(); ?>/img/tab3.jpg) no-repeat center center/ cover;">
-				<img src="<?php echo get_template_directory_uri(); ?>/img/Informacionoscuro.svg" alt="">
-				<h2>Información en tiempo real</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque minima, natus aliquid id incidunt porro reprehenderit officiis impedit consequatur earum sequi aut iusto ex velit autem, laudantium eos recusandae, provident.</p>
-			</div>
-			<div id="servicio4" class="container-fluid tab-pane fade justify-content-center align-items-center" style="background: url(<?php echo get_template_directory_uri(); ?>/img/tab4.jpg) no-repeat center center/ cover;">
-				<img src="<?php echo get_template_directory_uri(); ?>/img/seguridadoscuro.svg" alt="">
-				<h2>Control de accesos</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum animi, dolores hic ea qui quis aut totam! Aut, veritatis ipsam harum, et mollitia ea maiores accusamus minima nostrum quia molestias.</p>
-			</div>
+			<?php 
+				// Argumentos para una busqueda de post type
+				$i = 0;
+				$args = array(
+				    'post_type' => 'servicio', // Nombre del post type
+				    'order' => 'ASC'
+				);
+				$servicios = new WP_Query($args);
+					if ($servicios->posts):
+				  // Foreach para recorrer el resultado de la busqueda
+					foreach ($servicios->posts as $servicio):
+						$servicio_desc = $servicio->post_content;
+						$servicio_imgc = pods_field('servicio', $servicio->ID, 'imagen_2');
+						$servicio_icon = pods_field('servicio', $servicio->ID, 'icono');
+						$servicio_name = $servicio->post_title;
+						$servicio_slug = $servicio->post_name;
+				?> 
+					<div id="<?php echo $servicio_slug;?>" class="container-fluid tab-pane <?php echo ($i == 0)?'active':'';?> justify-content-center align-items-center" style="background: url(<?php echo $servicio_imgc['guid']; ?>) no-repeat center center/ cover;">
+						<img src="<?php echo $servicio_icon['guid'];?>" alt="">
+						<h2><?php echo $servicio_name?></h2>
+						<p><?php echo $servicio_desc;?></p>
+					</div>
+				<?php
+					$i++;
+					endforeach;
+					endif;
+				?>
 		</div>			
 	</div>
 </section>
@@ -192,41 +197,10 @@ $destacados = new WP_Query($args);
 <!--Form-->
 <section class="container pd-60-top">
 	<div class="row">
-		<div class="col-12">
-			<h2 class="text-center color-verdeoscuro">Contácte nuestros servicios</h2>
-		</div>
-		<div class="col-md-6 px-0 d-flex justify-content-center"> <img src="<?php echo get_template_directory_uri(); ?>/img/imgcontacto.png" class="img-fluid img-contacto"> </div>
-		<div class="col-md-6 px-0 form-contact d-flex align-items-center">
-			<div class="form bg-verde w-100">
-				<form action="">
-					<div class="form-group row">
-						<label for="staticEmail" class="col-sm-2 col-form-label">Necesito:</label>
-						<div class="col-sm-10">
-							<select>
-								<option value="volvo">Volvo</option>
-								<option value="saab">Saab</option>
-								<option value="mercedes">Mercedes</option>
-								<option value="audi">Audi</option>
-							</select>
-						</div>
-					</div>
-					<div class="form-group row">
-						<label for="staticEmail" class="col-sm-2 col-form-label">Mail:</label>
-						<div class="col-sm-10">
-							<input type="text" class="" id="" value="">
-						</div>
-					</div>
-					<div class="form-group row">
-						<label for="staticEmail" class="col-sm-2 col-form-label">Mensaje:</label>
-						<div class="col-sm-10">
-							<textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-						</div>
-					</div>
-
-					<input type="submit" value="Enviar">
-				</form> 
-			</div>
-		</div>
+		<?php 
+			$contact = get_post('125');
+			echo do_shortcode($contact->post_content);
+		?>
 	</div>
 </section>
 
