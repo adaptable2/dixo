@@ -25,6 +25,8 @@
 }
 .text-3d{
     padding: 40px 20px;
+    max-height: 452px;
+    overflow-y: auto;
     @media only screen and (max-width: 768px){
         padding: 10px 45px;
     }
@@ -44,6 +46,9 @@
         display: block ;
     }
 }
+
+
+
 .carousel-3d-container,.carousel-3d-slider,.carousel-3d-slide.current{
     @media only screen and (max-width: 900px){
         min-height: 480px !important;

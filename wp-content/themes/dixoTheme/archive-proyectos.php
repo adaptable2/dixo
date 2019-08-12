@@ -9,7 +9,7 @@ $argsBanner = array(
 	$banners = new WP_Query($argsBanner);
 	if($banners):
 ?>
-	<div class="paralax-banner">
+	<div class="owl-carousel">
 		<?php 
 		foreach ($banners->posts as $banner):
 			$banner_img = wp_get_attachment_url( get_post_thumbnail_id($banner->ID, 'full') );
@@ -19,21 +19,23 @@ $argsBanner = array(
 
 
 			?>
-			<section class="banner-principal d-flex justify-content-start align-items-center" style="background-image: url('<?php echo $banner_img; ?>')" id="inicio">
-				<div class="col-md-5 offset-md-2">
-					<div class="text-banner d-inline-block">
-						<div class="d-flex">
-							<div class="col-12 pr-0">
-								<h2 class="font-weight-light color-verde">
-									<?php echo $banner_desc; ?>
-									<span class="font-weight-bold d-block color-grisoscuro"><?php echo $banner_subtitle; ?></span>
-								</h2>
-								<a href="#" class="btn-general">Más información</a>
+			<div>
+				<section class="banner-principal d-flex justify-content-start align-items-center" style="background-image: url('<?php echo $banner_img; ?>')" id="inicio">
+					<div class="col-md-5 offset-md-2">
+						<div class="text-banner d-inline-block">
+							<div class="d-flex">
+								<div class="col-12 pr-0">
+									<h2 class="font-weight-light color-verde">
+										<?php echo $banner_desc; ?>
+										<span class="font-weight-bold d-block color-grisoscuro"><?php echo $banner_subtitle; ?></span>
+									</h2>
+									<a href="#" class="btn-general">Más información</a>
+								</div>
 							</div>
 						</div>
 					</div>
-				</div>
-			</section>
+				</section>
+			</div>
 			<?php 
 		endforeach;
 		?>

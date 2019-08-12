@@ -18,5 +18,15 @@ $(document).ready(function(){
 		});
 		$('.option').text($('.options-mobile .active').text());
 	}
-
+    $(".btn-general").click(function() {
+        let href = $(this).attr('href');
+        $('html, body').animate({
+            scrollTop: $(href).offset().top - 78
+        }, 500);
+    });
+    $(".owl-carousel").owlCarousel({
+    	items: 1,
+    	autoplay: 'true',
+    	loop: 'true'
+    });
 });

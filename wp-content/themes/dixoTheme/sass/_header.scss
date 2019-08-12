@@ -1,7 +1,9 @@
 .nav-page{
 	background: white;
-	position: relative;
-	z-index: 1;
+	position: fixed;
+	z-index: 3;
+	top: 0;
+	width: 100%;
 }
 .search{
 	width: 50%;

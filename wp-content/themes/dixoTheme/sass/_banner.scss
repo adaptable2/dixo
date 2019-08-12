@@ -11,10 +11,11 @@
     	content: "";
     	display: block;
     	position: absolute;
-    	top: 90px;
+    	top: 50%;
     	right: 8.333333%;
     	height: 100px;
     	width: 100px;
+        transform: translateY(-50%);
     	background: url(img/Logo_dixo_banner.svg) no-repeat center / contain;
     	@media only screen and (max-width: 568px){
     		width: 60px;
@@ -25,7 +26,7 @@
 
 .num-banner{
 	font-size: 6em;
-	line-height: 100px;
+    line-height: 75px;
 	font-weight: bold;
 	@media only screen and (max-width: 768px){
 		font-size: 2em;

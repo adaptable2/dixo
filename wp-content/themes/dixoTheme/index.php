@@ -10,18 +10,19 @@
 	if($banners):
 ?>
 
-
-	<div class="paralax-banner">
+<div class="owl-carousel">
 		<?php 
 			foreach ($banners->posts as $banner):
 				$banner_img = wp_get_attachment_url( get_post_thumbnail_id($banner->ID, 'full') );
 				$banner_desc = $banner->post_content;
+				$banner_url = $banner->url;
 				$banner_custom = get_post_meta($banner->ID);
 				$banner_numero = $banner_custom['numero'][0];
 				$banner_subtitle = $banner_custom['subtitulo'][0];
 
 
-		?>		
+		?>
+	<div>
 		<section class="banner-principal d-flex justify-content-start align-items-center" style="background-image: url('<?php echo $banner_img;?>')" id="inicio">
 			<div class="col-md-5 offset-md-2">
 				<div class="text-banner d-inline-block">
@@ -34,12 +35,13 @@
 								<?php echo $banner_desc;?>
 								<span class="font-weight-bold d-block color-grisoscuro"><?php echo $banner_subtitle;?></span>
 							</h2>
-							<!-- <a href="#" class="btn-general">Más información</a> -->
+							<a href="<?php echo $banner_url;?>" class="btn-general">Contactar</a>
 						</div>
 					</div>
 				</div>
 			</div>
 		</section>
+	</div>
 	<?php 
 		endforeach;
 	?>
@@ -195,7 +197,7 @@ $destacados = new WP_Query($args);
 </section>
 <!--Servicios-->
 <!--Form-->
-<section class="container pd-60-top">
+<section class="container pd-60-top" id="contacto">
 	<div class="row">
 		<?php 
 			$contact = get_post('125');
@@ -206,7 +208,7 @@ $destacados = new WP_Query($args);
 
 <section class="container-fluid">
 	<div class="row">
-		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.1557463360637!2d-75.5973396679721!3d6.243195535872841!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e4429465cecfa51%3A0xef4c689daeb0894a!2sActividad+Creativa+Agencia!5e0!3m2!1ses-419!2sco!4v1564700472284!5m2!1ses-419!2sco" width="100%" height="650" frameborder="0" style="border:0" allowfullscreen></iframe>
+		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.1992837425205!2d-75.59177018505248!3d6.237443695485007!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e4429bb182d02cb%3A0x34ef32c8e11ab97b!2sCra.+68+%2332c-91%2C+Medell%C3%ADn%2C+Antioquia!5e0!3m2!1ses-419!2sco!4v1565645869674!5m2!1ses-419!2sco" width="100%" height="650" frameborder="0" style="border:0" allowfullscreen></iframe>
 	</div>
 </section>
 <!--Form-->
