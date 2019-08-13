@@ -1,3 +1,4 @@
+<a href="" class="wp-chat"><img src="<?php echo get_template_directory_uri(); ?>/img/wp.png" class="img-fluid"></a>
 <footer class="play-font">
 	<div class="container">
 		<div class="row">
@@ -15,7 +16,7 @@
 				</ul>
 			</div>
 			<div class="col-md-2 d-flex align-items-center justify-content-center justify-content-md-start">
-				<a class="upscroll" href="#top">Inicio</a>
+				<a class="upscroll" href="#inicio">Inicio</a>
 			</div>
 			<div class="col-md-5 d-flex flex-column flex-md-row justify-content-center justify-content-md-between align-items-center">
 				<ul class="redes-footer">

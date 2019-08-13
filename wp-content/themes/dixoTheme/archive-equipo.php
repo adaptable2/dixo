@@ -13,6 +13,7 @@
 		foreach ($banners->posts as $banner):
 			$banner_img = wp_get_attachment_url( get_post_thumbnail_id($banner->ID, 'full') );
 			$banner_desc = $banner->post_content;
+			$banner_url = $banner->url;
 			$banner_custom = get_post_meta($banner->ID);
 			$banner_numero = $banner_custom['numero'][0]; 
 			$banner_subtitle = $banner_custom['subtitulo'][0];
@@ -75,7 +76,17 @@
 		          	$equipo_img = wp_get_attachment_url( get_post_thumbnail_id($equipo->ID, 'full') ); // Url de la imagen en tamaño Full
 	        ?>
 			<slide :index="<?php echo $i;?>" class="col-12">
-				<div class="row">
+				<div class="d-flex">
+					<div class="col-md-6 px-0 d-none d-md-flex">
+						<img src="<?php echo $equipo_img; ?>" alt="" class="img-fluid">
+					</div>
+					<div class="col-md-6 bg-verde color-grisoscuro text-3d">
+						<h2 class="title-3d font-weight-bold"><?php echo $equipo_name;?></h2>
+						<p class="sub-title font-weight-bold"><?php echo $equipo_desc;?></p>
+						<!-- <p><?php echo $historia_dh;?></p> -->
+					</div>
+				</div>
+				<!-- <div class="row">
 					<div class="col-4 col-md-3 align-items-center ">
 						<img src="<?php echo $equipo_img ?>" alt="" class="d-inline-block">
 					</div>
@@ -85,7 +96,7 @@
 					<div class="col-12 color-grisoscuro text-3d">
 						<?php echo $equipo_desc;?>
 					</div>
-				</div>
+				</div> -->
 			</slide>
 		    <?php
 		    	$i++;

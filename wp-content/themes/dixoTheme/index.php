@@ -27,10 +27,7 @@
 			<div class="col-md-5 offset-md-2">
 				<div class="text-banner d-inline-block">
 					<div class="d-flex">
-						<div class="col-2 col-md-3 px-0 color-verdeoscuro text-right">
-							<h2 class="num-banner"><?php echo $banner_numero;?></h2>
-						</div>
-						<div class="col-10 col-md-9 pr-0">
+						<div class="col-12 col-md-9 pr-0">
 							<h2 class="font-weight-light color-verde">
 								<?php echo $banner_desc;?>
 								<span class="font-weight-bold d-block color-grisoscuro"><?php echo $banner_subtitle;?></span>

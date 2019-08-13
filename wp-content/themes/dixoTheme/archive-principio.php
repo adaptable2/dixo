@@ -16,6 +16,7 @@
 			foreach ($banners->posts as $banner):
 				$banner_img = wp_get_attachment_url( get_post_thumbnail_id($banner->ID, 'full') );
 				$banner_desc = $banner->post_content;
+				$banner_url = $banner->url;
 				$banner_custom = get_post_meta($banner->ID);
 				$banner_numero = $banner_custom['numero'][0];
 				$banner_subtitle = $banner_custom['subtitulo'][0];
@@ -35,7 +36,7 @@
 								<?php echo $banner_desc;?>
 								<span class="font-weight-bold d-block color-grisoscuro"><?php echo $banner_subtitle;?></span>
 							</h2>
-							<!-- <a href="#" class="btn-general">Más información</a> -->
+							<a href="<?php echo $banner_url;?>" class="btn-general">Contactar</a>
 						</div>
 					</div>
 				</div>

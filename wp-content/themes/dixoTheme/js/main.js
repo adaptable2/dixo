@@ -18,7 +18,7 @@ $(document).ready(function(){
 		});
 		$('.option').text($('.options-mobile .active').text());
 	}
-    $(".btn-general").click(function() {
+    $(".btn-general,.upscroll").click(function() {
         let href = $(this).attr('href');
         $('html, body').animate({
             scrollTop: $(href).offset().top - 78
