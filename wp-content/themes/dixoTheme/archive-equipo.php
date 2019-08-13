@@ -59,7 +59,7 @@
 </section>
 <section class="container">
 	<div id="carouselequipo">
-		<carousel-3d :perspective="0" :width="768" :height="400" :space="300" :display="3" :controls-visible="true" :controls-prev-html="'❬'" :controls-next-html="'❭'" :controls-width="30" :controls-height="60" :clickable="true" :autoplay="false">
+		<carousel-3d :perspective="0" :width="768" :height="300" :space="300" :display="3" :controls-visible="true" :controls-prev-html="'❬'" :controls-next-html="'❭'" :controls-width="30" :controls-height="60" :clickable="true" :autoplay="false">
 			<?php 
 		    // Argumentos para una busqueda de post type
 		    $i = 0;
@@ -76,27 +76,15 @@
 		          	$equipo_img = wp_get_attachment_url( get_post_thumbnail_id($equipo->ID, 'full') ); // Url de la imagen en tamaño Full
 	        ?>
 			<slide :index="<?php echo $i;?>" class="col-12">
-				<div class="d-flex">
-					<div class="col-md-6 px-0 d-none d-md-flex">
+				<div class="row">
+					<div class="col-md-6 px-0 d-flex img-3d">
 						<img src="<?php echo $equipo_img; ?>" alt="" class="img-fluid">
 					</div>
 					<div class="col-md-6 bg-verde color-grisoscuro text-3d">
 						<h2 class="title-3d font-weight-bold"><?php echo $equipo_name;?></h2>
 						<p class="sub-title font-weight-bold"><?php echo $equipo_desc;?></p>
-						<!-- <p><?php echo $historia_dh;?></p> -->
 					</div>
 				</div>
-				<!-- <div class="row">
-					<div class="col-4 col-md-3 align-items-center ">
-						<img src="<?php echo $equipo_img ?>" alt="" class="d-inline-block">
-					</div>
-					<div class="col-8 col-md-9 d-flex align-items-center">
-						<h2 class="title-3d"><?php echo $equipo_name;?></h2>
-					</div>
-					<div class="col-12 color-grisoscuro text-3d">
-						<?php echo $equipo_desc;?>
-					</div>
-				</div> -->
 			</slide>
 		    <?php
 		    	$i++;

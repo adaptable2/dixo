@@ -47,6 +47,13 @@
     }
 }
 
+#carouselequipo{
+    .carousel-3d-slide{
+        .img-3d{
+            max-height: 300px;
+        }
+    }
+}
 
 
 .carousel-3d-container,.carousel-3d-slider,.carousel-3d-slide.current{
@@ -85,9 +92,12 @@
         overflow: visible;
     }
     .carousel-3d-slide{
-        padding: 40px;
         box-shadow: 0 0 10px silver;
+        .img-3d{
+            max-height: 300px;
+        }
         @media only screen and (max-width: 768px){
+            box-shadow: inherit;
             padding: 30px 0px;
             .text-3d{
                 padding: 30px 60px;

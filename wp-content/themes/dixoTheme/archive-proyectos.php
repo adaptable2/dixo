@@ -119,7 +119,6 @@ endif;
 								<img src="<?php echo $proyecto_icon['guid'];?>" alt="" class="img-fluid">
 								<h2><?php echo $proyecto_name;?></h2>
 								<p><?php echo $proyecto_desc;?></p>
-								<a href="" class="btn-general">Contactar</a>
 							</div>
 						</div>
 					</div>

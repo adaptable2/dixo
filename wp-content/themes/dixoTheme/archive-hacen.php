@@ -146,7 +146,6 @@ $destacados = new WP_Query($args);
 		<div class="col-md-5 d-flex justify-content-center flex-column">
 			<div class="description-content color-grisoscuro">
 				<p><?php echo $destacado_desc;?></p>
-				<!-- <a href="#" class="btn-general">Más información</a> -->
 			</div>
 		</div>
 	</div>
