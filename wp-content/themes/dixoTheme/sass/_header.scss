@@ -22,6 +22,7 @@
 	@media only screen and (min-width: 992px){
 		position: absolute;
 		right: 0;
+		width: 25%;
 	}
 }
 
@@ -31,12 +32,6 @@
 	@media only screen and (max-width: 992px){
 		padding: 20px 17px;
 	}
-	&:first-child{
-		margin-left: 50px;
-		@media only screen and (max-width: 992px){
-			margin-left: 0px;
-		}
-	}
 	a{
 		color: $grisoscuro;
 	}
@@ -44,8 +39,6 @@
 
 @media only screen and (min-width: 768px){
 	.collapse{
-		position: absolute;
-		bottom: -90px;
 	}
 } 
 

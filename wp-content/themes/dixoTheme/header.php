@@ -21,7 +21,7 @@
                     <span class="bar-menu"></span>
                     <span class="bar-menu"></span>
                 </button>                
-                <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                <div class="collapse navbar-collapse justify-content-start" id="navbarSupportedContent">
                     <?php
                     $defaults = array(
                         'theme_location'    => 'principal-menu',
