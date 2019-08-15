@@ -33,9 +33,7 @@
                     ?>
                 </div> 
                 <div class="search">
-                    <form class="form-inline" action="">
-                        <input class="form-control mr-sm-2" type="text" >
-                    </form>
+                    <?php get_template_part('searchform'); ?>
                 </div>
             </nav>
         </div>
