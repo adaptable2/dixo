@@ -32,9 +32,7 @@
 
                     ?>
                 </div> 
-                <div class="search">
                     <?php get_template_part('searchform'); ?>
-                </div>
             </nav>
         </div>
     </div>
